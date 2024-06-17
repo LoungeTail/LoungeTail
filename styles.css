@@ -1,98 +1,28 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background: #f0f0f0;
-}
-
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    overflow: hidden;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
-}
-
-.background::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0) 70%);
-    border-radius: 50%;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.background .circle {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    animation: fadeInOut 6s infinite;
-}
-
-.circle1 { top: 10%; left: 10%; }
-.circle2 { top: 30%; left: 20%; }
-.circle3 { top: 50%; left: 30%; }
-.circle4 { top: 70%; left: 40%; }
-.circle5 { top: 50%; right: 20%; }
-
-.container {
-    width: 70%;
-    text-align: center;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 2.5em;
-}
-
-p {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin: 10px 0;
-}
-
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 0.4;
-    }
-}
-
-@keyframes moveLeft {
-    0% {
-        right: 0;
-    }
-    100% {
-        right: 100%;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Group</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="circle"></div>
+        <div class="square"></div>
+    </div>
+    <div class="container">
+        <div class="content-box">
+            <h1>Welcome to Our Group</h1>
+            <p>We are a community focused on providing resources and guidance to help you achieve your goals.</p>
+            <p>What We Offer:</p>
+            <ul>
+                <li>Access to exclusive resources</li>
+                <li>Personalized guidance and support</li>
+                <li>Networking opportunities</li>
+                <li>Workshops and events</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
