@@ -8,6 +8,7 @@ body, html {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background: #f0f0f0;
 }
 
 .background {
@@ -18,30 +19,37 @@ body, html {
     left: 0;
     z-index: -1;
     overflow: hidden;
-    background: #f0f0f0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
 }
 
-.circle {
+.background::before {
+    content: "";
     position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.1);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.background .circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
     animation: fadeInOut 6s infinite;
 }
 
-.square {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: rgba(0, 0, 0, 0.1);
-    top: 20%;
-    right: 0;
-    animation: moveLeft 10s infinite linear;
-}
+.circle1 { top: 10%; left: 10%; }
+.circle2 { top: 30%; left: 20%; }
+.circle3 { top: 50%; left: 30%; }
+.circle4 { top: 70%; left: 40%; }
+.circle5 { top: 50%; right: 20%; }
 
 .container {
     width: 70%;
@@ -49,24 +57,6 @@ body, html {
     background: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 0.4;
-    }
-}
-
-@keyframes moveLeft {
-    0% {
-        right: 0;
-    }
-    100% {
-        right: 100%;
-    }
 }
 
 h1 {
@@ -87,4 +77,22 @@ ul {
 
 li {
     margin: 10px 0;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: 100%;
+    }
 }
